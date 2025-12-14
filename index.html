@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notely</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              background: '#121212',
+              surface: '#181818',
+              surfaceHighlight: '#282828',
+              primary: '#1DB954', // Spotify Green-ish
+              accent: '#3B82F6',
+            },
+            animation: {
+              'cinematic-fade': 'cinematicFade 4s ease-in-out forwards',
+              'cinematic-shimmer': 'shimmer 2s linear infinite',
+            },
+            keyframes: {
+              cinematicFade: {
+                '0%': { opacity: '0', transform: 'scale(0.95)', filter: 'blur(10px)' },
+                '30%': { opacity: '1', transform: 'scale(1)', filter: 'blur(0px)' },
+                '80%': { opacity: '1', transform: 'scale(1.05)', filter: 'blur(0px)' },
+                '100%': { opacity: '0', transform: 'scale(1.1)', filter: 'blur(20px)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+      /* Custom Scrollbar for premium feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #121212; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #444; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
